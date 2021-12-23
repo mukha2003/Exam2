@@ -168,7 +168,7 @@
   .header__title {
     font-size: 3.125rem;
     width: 80%;
-    margin: 30px auto;
+    margin: 0 auto 30px;
     line-height: 4rem;
   }
   .header__subtitle {

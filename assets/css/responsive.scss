@@ -195,7 +195,7 @@ $main_d: #2C4058;
         &__title {
             @include fz(50);
             width: 80%;
-            margin: 30px auto;
+            margin: 0 auto 30px;
             line-height: 4rem;
         }
         &__subtitle {

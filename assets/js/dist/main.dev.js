@@ -50,6 +50,12 @@ $(function () {
         autoplay: true,
         autoplaySpeed: 2000
       }
+    }, {
+      breakpoint: 500,
+      settings: {
+        dots: false,
+        autoplay: false
+      }
     }]
   });
   $('#slider-2').slick({
