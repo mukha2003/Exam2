@@ -683,7 +683,7 @@ header {
   line-height: 20px;
   position: absolute;
   top: 60px;
-  left: 2px;
+  left: 50%;
   display: block;
   width: 10px;
   height: 10px;
@@ -846,6 +846,9 @@ header {
   width: 100px;
   padding: 5px;
 }
+.map .leaflet-top, .map .leaflet-bottom {
+  z-index: 100;
+}
 
 .contacts {
   position: absolute;
@@ -944,4 +947,5 @@ header {
   font-size: 0.875rem;
   line-height: 1.0625rem;
   margin-top: 41px;
+  opacity: 0.9;
 }

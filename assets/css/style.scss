@@ -212,8 +212,7 @@ body {
   
   .sidemenu {
     li {
-      border-bottom: 1px solid #666;
-  
+      border-bottom: 1px solid #666; 
       color: $main_d;
   
       a {
@@ -610,7 +609,7 @@ header {
     line-height: 20px;
     position: absolute;
     top: 60px;
-    left: 2px;
+    left: 50%;
     display: block;
     width: 10px;
     height: 10px;
@@ -776,7 +775,10 @@ header {
     &__popup img {
         width: 100px;
         padding: 5px;
-    }   
+    }  
+    .leaflet-top, .leaflet-bottom {
+        z-index: 100;
+    } 
 }
 
 //contacts
@@ -886,6 +888,7 @@ header {
         @include fz(14);
         @include lx(17);
         margin-top: 41px;
+        opacity: 0.9;
     }
 }
 
