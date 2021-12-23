@@ -1,3 +1,14 @@
+$base_size:16;
+$main_d: #2C4058;
+
+@mixin fz($px_size) {
+    font-size: ($px_size/$base_size)+rem;
+}
+
+@mixin lx($px_size) {
+    line-height: ($px_size/$base_size)+rem;
+}
+
 @media screen and (max-width:1400px) {
     .slider-1 .slick-dots {
         left:15%;
@@ -15,14 +26,113 @@
     }
  
 }
-@media screen and (max-width:1170px) {
+@media screen and (max-width:1200px) {
     .nav {
-    &__list {
-        margin-left: 20px;
+        &__list {
+            margin-left: 20px;
+        }
+        &__link {
+            padding: 10px 25px;
+            margin: 5px;
+        }
     }
-    &__link {
-        padding: 10px 25px;
-        margin: 5px;
+    .aside {
+        width: 60%;
+        padding-top: 0;
+    }
+    .slider-1 .slick-dots {
+        left:8%;
+    }   
+    .slider-2__title {
+        height: 22%;
     }
 }
+
+@media screen and (max-width:1075px) {
+    .header__title {
+        @include fz(65);
+    }
+    .slider-2 {
+        &__title {
+        height: 22%;
+        margin-bottom: 40px;
+        }
+        .slick-slide {
+            margin: 0 10px;
+        }
+    
+    }
+}
+@media screen and (max-width:1000px){
+    .header {
+        
+        .nav__menu {
+            display: none;
+        }
+
+        #hamburger_menu {
+            display: block;
+        }
+    }
+    .nav__logo {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:965px) {
+    .aside {
+        width: 80%;
+    }
+    .slider-2{
+        &__title {
+            height: 16%;
+            margin-bottom: 30px;
+        }
+        &__descr {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .header {
+        &__title {
+        @include fz(50);
+        padding-top: 200px;
+        }
+        &__subtitle {
+            letter-spacing: 0.1em;
+        }
+    }
+    .projects {
+        &__title {
+            margin-bottom: 100px;
+        }
+        &__trade {
+            padding-bottom: 130px;
+        }
+    }
+    .slider-2{
+        &__descr {
+            margin-bottom: 25px;
+        }
+    }
+    .contacts {
+        width: 600px;
+        padding: 90px 20px 60px;
+        top: -360px;
+        &__item:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        &__btn {
+            margin: 0 auto;
+        }
+        &__link {
+            font-size: 1rem;
+        }
+    }
+    .form__input {
+        width: 250px;
+    }
+    
 }

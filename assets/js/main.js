@@ -1,3 +1,5 @@
+new WOW().init();
+
 function getNews(){
     $.ajax({
         url:'assets/common/news.json',
@@ -8,7 +10,10 @@ function getNews(){
             for(let i=0;i<json.length;i++){
                 html += `
                  <li class="slider-2__card">
-                    <img data-lazy=${json[i].img} alt="picture" class="slider-2__img">
+ 
+                    <img data-lazy=${json[i].img} alt="picture" class="slider-2__img"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
+                   
                     <h4 class="slider-2__title">${json[i].title}</h4>
                     <p class="slider-2__descr descr-cmn">${json[i].text}</p>
                     <div class="slider-2__authors authors">
@@ -42,9 +47,6 @@ function showGallery(){
 }
 
 
-
-
-
 $(function(){
     getNews();
     showGallery()
@@ -56,23 +58,53 @@ $(function(){
         arrows: false,
         dots: true,
         lazyLoad: 'ondemand',
+        
         responsive:[
             {
-                breakpoint: 1180,
+                breakpoint: 1000,
                 settings: {
                     dots:false,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
                 }
             }
         ]
     });
+    
 
     $('#slider-2').slick({
         slidesToShow: 3,
         dots: true,
         lazyLoad: 'ondemand',
         arrows: true,
+        responsive:[              
+                {
+                breakpoint: 965,
+                settings: {
+                    slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2,
+                        arrows: false,
+                        }
+                }
+        ]
+    });
+
+    // hamburger
+
+    $(".hamburger, #page-overlay").on("click", function () {
+        $("#mobile-menu-wrap .hamburger").toggleClass("is-active");
+        $("body").toggleClass("open");
     });
    
+    $(".sidemenu__nav li a").on('click', function(){
+        $('body').removeClass('open');
+    })
+    // scroll
 
     $(window).on('scroll', function(){
             if($(window).scrollTop()>0){
@@ -93,6 +125,12 @@ $(function(){
         $("html, body").animate({scrollTop:top+'px'},1000);
     })
 
+    $(".header__button").on('click', function(){
+      $('html,body').animate({
+          scrollTop: $('.map').offset().top
+      },2000);
+        
+    });
   
 
   
@@ -114,27 +152,71 @@ $(function(){
                 shadowSize: [106, 106],
         });
 
-        const marker = L.marker([40.851137941150604, -73.84834194992693], { icon: myIcon }).addTo(map)
+        L.marker([40.851137941150604, -73.84834194992693], { icon: myIcon }).addTo(map)
             .bindPopup(`
         <div class="map__popup">
             <img src="assets/images/orang.jpg">
             <div class="map__info"><b>Welcome!</b></div>
             </div>
         `);
-        marker.on('click', function () {
-            document.getElementById("to_google_map").click();
-            // window.location.href = "https://www.google.com.ua/maps/place/@50.4265986,30.4947427,18z"
-        });
     });
 
+    
     $(".nav__link").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-58;
         $("html, body").animate({scrollTop:top+'px'},1000);
     });
 
- 
+
+
+    $("#contact_form").on('submit', function(e){
+       
+        e.preventDefault();
+
+       let name = $("#form-name").val();
+       let email = $("#form-email").val();
+       $("#form-name").removeClass("error");
+       $("#form-email").removeClass("error");
+
+       if (name.length<=1){
+        $("#form-name").addClass("error");
+        toastr.error('Please enter your name');         
+       }else if (email.length<=1) {
+        $("#form-email").addClass("error");
+        toastr.error('Please enter your email');
+       }
+       else {
+        sendData();
+        $("#form-name").removeClass("error");
+        $("#form-email").removeClass("error");
+       }        
+    });
+    toastr.options = {
+        "positionClass": "toast-bottom-center",       
+      }
 });
+
+function sendData(){
+    // const BOT_TOKEN = '5080323427:AAHPqhWaRnkikDCjJcMOPiYDNmWLfBqPE3c';
+    // const CHAT_ID = '-1001616535193';
+    const BOT_TOKEN = '5061961723:AAFyTzsk1BHKDdQfM55rCg4LIN4DH0cVSW0';
+    const CHAT_ID = '-1001620060802';
+    
+    let text = encodeURI("<b>Name: </b>"+$("#form-name").val()+"\r\n<b>Email: </b>" +$("#form-email").val());
+
+    $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=html`, (json)=>{
+        console.log(json);
+        if (json.ok) {
+        $("#contact_form").trigger('reset');
+        toastr.success('We will contact you ASAP','Message sent');
+
+    } else {
+        alert(json.description);
+    }
+    });
+}
+
 
 
 
