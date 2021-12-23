@@ -89,7 +89,6 @@ $(function(){
                     settings: {
                         slidesToShow: 2,
                         arrows: false,
-                        swipeToSlide: true
                         }
                 },
                 {

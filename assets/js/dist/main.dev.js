@@ -66,8 +66,7 @@ $(function () {
       breakpoint: 800,
       settings: {
         slidesToShow: 2,
-        arrows: false,
-        swipeToSlide: true
+        arrows: false
       }
     }, {
       breakpoint: 650,
