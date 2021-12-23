@@ -53,8 +53,9 @@ $(function () {
     }, {
       breakpoint: 500,
       settings: {
+        swipe: false,
         dots: false,
-        autoplay: false
+        autoplay: true
       }
     }]
   });
