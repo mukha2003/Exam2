@@ -1,0 +1,3 @@
+user-agent:*
+Allow:/
+Sitemap: https://mukha2003.github.io/Exam2/sitemap.xml
