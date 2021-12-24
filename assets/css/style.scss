@@ -260,6 +260,9 @@ li {
         }
     }
 }
+#hamburger_menu {
+    display: none;
+}
 
 .open {
     #page-overlay {
@@ -271,7 +274,7 @@ li {
     }
     
     #hamburger_menu {
-        display: none;
+        display: block;
     }
 }
 //header

@@ -372,6 +372,10 @@ body {
   height: 25px;
 }
 
+#hamburger_menu {
+  display: none;
+}
+
 .open #page-overlay {
   display: block;
 }
@@ -379,7 +383,7 @@ body {
   left: 0;
 }
 .open #hamburger_menu {
-  display: none;
+  display: block;
 }
 
 header {
