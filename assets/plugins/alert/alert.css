@@ -1,0 +1,40 @@
+#alert {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 5px 4px 4px #ccc;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(123, 123, 123, 0.7);
+  padding: 50px 20px;
+  font-size: 20px;
+  z-index: 1000000;
+}
+#alert.success {
+  background-color: rgba(89, 218, 14, 0.9);
+}
+#alert.danger {
+  background-color: rgba(252, 7, 7, 0.9);
+}
+#alert button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#alert button:hover {
+  color: red;
+}

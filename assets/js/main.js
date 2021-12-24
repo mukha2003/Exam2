@@ -190,11 +190,11 @@ $(function(){
        $("#form-email").removeClass("error");
 
        if (name.length<=1){
-        $("#form-name").addClass("error");
-        toastr.error('Please enter your name');         
+        $("#form-name").addClass("error");   
+        alert.danger('Please, enter your name!', true);    
        }else if (email.length<=1) {
         $("#form-email").addClass("error");
-        toastr.error('Please enter your email');
+        alert.danger('Please, enter your email!',true); 
        }
        else {
         sendData();
@@ -202,9 +202,6 @@ $(function(){
         $("#form-email").removeClass("error");
        }        
     });
-    toastr.options = {
-        "positionClass": "toast-bottom-center",       
-      }
 });
 
 function sendData(){
@@ -217,12 +214,11 @@ function sendData(){
         console.log(json);
         if (json.ok) {
         $("#contact_form").trigger('reset');
-        toastr.success('We will contact you ASAP','Message sent');
-
-    } else {
-        alert(json.description);
-    }
-    });
+        alert.success('Message sent!', true);
+        } else {
+            alert(json.description);
+        }
+        });
 }
 
 

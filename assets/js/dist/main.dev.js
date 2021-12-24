@@ -149,19 +149,16 @@ $(function () {
 
     if (name.length <= 1) {
       $("#form-name").addClass("error");
-      toastr.error('Please enter your name');
+      alert.danger('Please, enter your name!', true);
     } else if (email.length <= 1) {
       $("#form-email").addClass("error");
-      toastr.error('Please enter your email');
+      alert.danger('Please, enter your email!', true);
     } else {
       sendData();
       $("#form-name").removeClass("error");
       $("#form-email").removeClass("error");
     }
   });
-  toastr.options = {
-    "positionClass": "toast-bottom-center"
-  };
 });
 
 function sendData() {
@@ -173,7 +170,7 @@ function sendData() {
 
     if (json.ok) {
       $("#contact_form").trigger('reset');
-      toastr.success('We will contact you ASAP', 'Message sent');
+      alert.success('Message sent!', true);
     } else {
       alert(json.description);
     }
