@@ -184,7 +184,7 @@ $(function(){
        
         e.preventDefault();
 
-       let name = $("#form-name").val();
+       let name = $("#form-name").val().trim();
        let email = $("#form-email").val();
        $("#form-name").removeClass("error");
        $("#form-email").removeClass("error");

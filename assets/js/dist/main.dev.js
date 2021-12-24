@@ -142,7 +142,7 @@ $(function () {
   });
   $("#contact_form").on('submit', function (e) {
     e.preventDefault();
-    var name = $("#form-name").val();
+    var name = $("#form-name").val().trim();
     var email = $("#form-email").val();
     $("#form-name").removeClass("error");
     $("#form-email").removeClass("error");
