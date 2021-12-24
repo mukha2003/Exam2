@@ -675,6 +675,9 @@ header {
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
+.slider-2__img-wrap {
+  overflow: hidden;
+}
 .slider-2__title {
   text-transform: uppercase;
   color: #2C4058;
@@ -697,7 +700,7 @@ header {
   -webkit-box-orient: vertical;
 }
 .slider-2__link {
-  display: none;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;

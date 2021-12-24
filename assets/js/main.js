@@ -10,10 +10,10 @@ function getNews(){
             for(let i=0;i<json.length;i++){
                 html += `
                  <li class="slider-2__card">
- 
+                <div class="slider-2__img-wrap">
                     <img data-lazy=${json[i].img} alt="picture" class="slider-2__img"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
-                   
+                </div>   
                     <h4 class="slider-2__title">${json[i].title}</h4>
                     <p class="slider-2__descr descr-cmn">${json[i].text}</p>
                     <div class="slider-2__authors authors">
@@ -103,8 +103,7 @@ $(function(){
                     breakpoint: 650,
                     settings: {
                         slidesToShow: 1,
-                        arrows: false,
-                        
+                        arrows: false,                       
                     }
                 }
         ]

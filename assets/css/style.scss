@@ -600,6 +600,9 @@ header {
         -o-transition: all 0.4s ease-in-out;
         transition: all 0.4s ease-in-out;
     }
+    &__img-wrap {
+        overflow: hidden;
+    }
     &__title {
         text-transform: uppercase;
         color: $main_d;
@@ -622,7 +625,7 @@ header {
         -webkit-box-orient: vertical;
     }
     &__link {
-        display: none;
+        display: block;
         position: absolute;
         top: 0;
         left: 0;
