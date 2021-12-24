@@ -17,7 +17,7 @@ function getNews() {
       $("#slider-2").slick('slickAdd', html);
     },
     error: function error() {
-      alert("Menu JSON not found");
+      alert("Can not load news");
     }
   });
 }
@@ -165,8 +165,6 @@ $(function () {
 });
 
 function sendData() {
-  // const BOT_TOKEN = '5080323427:AAHPqhWaRnkikDCjJcMOPiYDNmWLfBqPE3c';
-  // const CHAT_ID = '-1001616535193';
   var BOT_TOKEN = '5061961723:AAFyTzsk1BHKDdQfM55rCg4LIN4DH0cVSW0';
   var CHAT_ID = '-1001620060802';
   var text = encodeURI("<b>Name: </b>" + $("#form-name").val() + "\r\n<b>Email: </b>" + $("#form-email").val());

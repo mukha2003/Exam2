@@ -30,7 +30,7 @@ function getNews(){
             $("#slider-2").slick('slickAdd',html);           
         },
         error:function(){
-            alert("Menu JSON not found");
+            alert("Can not load news");
         }
     });
 }
@@ -146,10 +146,7 @@ $(function(){
       },2000);
         
     });
-  
-
-  
-   
+    
     $("#init_map").on('click', function () {
         $(this).remove();
         var map = L.map('my_map').setView([40.851137941150604, -73.84834194992693], 17);
@@ -183,8 +180,6 @@ $(function(){
         $("html, body").animate({scrollTop:top+'px'},1000);
     });
 
-
-
     $("#contact_form").on('submit', function(e){
        
         e.preventDefault();
@@ -213,8 +208,6 @@ $(function(){
 });
 
 function sendData(){
-    // const BOT_TOKEN = '5080323427:AAHPqhWaRnkikDCjJcMOPiYDNmWLfBqPE3c';
-    // const CHAT_ID = '-1001616535193';
     const BOT_TOKEN = '5061961723:AAFyTzsk1BHKDdQfM55rCg4LIN4DH0cVSW0';
     const CHAT_ID = '-1001620060802';
     
