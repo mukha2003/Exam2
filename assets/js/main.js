@@ -11,7 +11,7 @@ function getNews(){
                 html += `
                  <li class="slider-2__card">
                 <div class="slider-2__img-wrap">
-                    <img data-lazy=${json[i].img} alt="picture" class="slider-2__img"
+                    <img data-lazy=${json[i].img} alt="picture" class="slider-2__img lazy"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw==">
                 </div>   
                     <h4 class="slider-2__title">${json[i].title}</h4>
