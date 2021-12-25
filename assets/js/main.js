@@ -143,8 +143,7 @@ $(function(){
     $(".header__button").on('click', function(){
       $('html,body').animate({
           scrollTop: $('.map').offset().top
-      },2000);
-        
+      },2000);       
     });
     
     $("#init_map").on('click', function () {
