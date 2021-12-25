@@ -71,7 +71,7 @@ $main_d: #2C4058;
     }
 }
 
-@media screen and (max-width:965px) {
+@media screen and (max-width:964px) {
     .aside {
         width: 80%;
     }
@@ -79,7 +79,10 @@ $main_d: #2C4058;
         &__title {
             height: 16%;
             margin-bottom: 30px;
-        }       
+        } 
+        &__descr{
+            margin-bottom: 15px;
+        }      
     }
 }
 

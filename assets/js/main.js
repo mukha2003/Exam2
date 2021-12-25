@@ -30,7 +30,7 @@ function getNews(){
             $("#slider-2").slick('slickAdd',html);           
         },
         error:function(){
-            alert("Can not load news");
+            alert.danger('Can not losd news',true); 
         }
     });
 }
@@ -118,6 +118,7 @@ $(function(){
    
     $(".sidemenu__nav li a").on('click', function(){
         $('body').removeClass('open');
+        $("#mobile-menu-wrap .hamburger").removeClass("is-active");
     })
     // scroll
 
@@ -215,7 +216,7 @@ function sendData(){
         $("#contact_form").trigger('reset');
         alert.success('Message sent!', true);
         } else {
-            alert(json.description);
+            alert.danger(json.description, true);
         }
         });
 }
